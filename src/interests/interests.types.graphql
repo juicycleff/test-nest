@@ -1,0 +1,28 @@
+# import User from "../users/users.types.graphql"
+# import Article from "../articles/articles.types.graphql"
+# import BooleanPayload from "../graphqls/graphqls.types.graphql"
+
+extend type Query {
+  interest(id: ID!): Interest!
+  interests: [Interest!]
+  interestsByRank: [Interest!]
+  followingInterest: BooleanPayload!
+}
+
+extend type Mutation {
+  followInterest(id: ID!): Interest!
+  unFollowInterest(id: ID!): Article!
+  createInterest(id: ID!): Article!
+  deleteInterest(id: ID!): Article!
+}
+
+type Interest {
+  _id: ID!
+  _key: ID
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String! 
+  avatar: String!
+  users: [User!]!
+  articles: [Article!]!
+}

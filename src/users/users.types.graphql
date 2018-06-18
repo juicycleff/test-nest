@@ -1,0 +1,61 @@
+type Query {
+  getUsers: [User!]
+  userById(id: ID!): User
+  userByEmail(email: ID!): User
+  userByUsername(username: String!): User
+  searchUser(searchString: String!): User
+  currentUser: User!
+  me: User!
+  nearByUsers(lng: Float!, lat: Float!, range: Int!, offset: Int): [User!]!
+}
+
+type Mutation {
+  addProfile(photoId: ID!, countryId: ID!, institutionId: ID!, departmentId: ID!): User!
+  addInterest(interests: [ID!]!): User!
+  followCommunities(communities: [ID!]!): User!
+  followUsers(users: [ID!]!): User!
+  followUser(id: ID!): User!
+  unFollowUser(id: ID!): User!
+}
+
+type Subscription {
+  userCreated: User
+  userUpdated: User
+  isOnline: User
+}
+
+type User {
+  _id: ID!
+  _key: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  email: String!
+  username: String
+  avatar: String
+  headerImage: String
+  password: String!
+  firstname: String!
+  lastname: String!
+  facebookAuthId: String
+  twitterAuthId: String
+  linkedInAuthId: String
+  inviteAccepted: Boolean!
+  emailConfirmed: Boolean!
+  emailConfirmToken: String
+  resetToken: String
+  inviteToken: String
+  verified: Boolean!
+  isSuper: Boolean!
+  bio: String
+  type: String!
+  gender: String!
+  isFollowing: Boolean!
+  isOnline: Boolean!
+  isFollower: Boolean!
+  isConnected: Boolean!
+  followers: [User!]
+  following: [User!]
+  connections: [User!]
+  communities: [User!]
+  completedProfile: Int
+}

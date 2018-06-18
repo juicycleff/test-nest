@@ -1,0 +1,36 @@
+# import User from "../users/users.types.graphql"
+# import Article from "../articles/articles.types.graphql"
+
+extend type Query {
+  comments(articleId: ID!, skip: Number!): [Comment!]
+  commentsByArticle(id: ID!): [Comment!]
+  comment(id: ID!): Comment
+  replies(id: ID!, skip: Number!): [Comment!]
+}
+
+extend type Mutation {
+  createComment(article: ID!, body: String!): Comment!
+  deleteComment(id: ID!): Comment!
+  likeComment(id: ID!): Comment!
+  unlikeComment(id: ID!): Comment!
+  updateComment(id: ID!): Comment!
+}
+
+extend type Subscription {
+  commentCreated: Comment
+  commentUpdated: Comment
+}
+
+type Comment {
+  _id: ID!
+  _key: ID
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  body: String!
+  replies: [Comment!]!
+  article: Article!
+  author: User!
+  reactions: [User!]
+  reacted: Boolean!
+  isAuthor: Boolean
+}

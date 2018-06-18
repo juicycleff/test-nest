@@ -1,0 +1,61 @@
+# import User from "./users/users.types.graphql"
+# import Comments from "./comments/comments.types.graphql"
+# import Interest from "../interests/interests.types.graphql"
+
+extend type Query {
+  articleById(id: ID!): Article
+  articleBySlug(slug: String!): Article
+  articlesByInterest(slug: String!): Article
+  articles: [Article!]
+  drafts: [Article!]
+  published: [Article!]
+  activity(userusername: String!, skip: Number): [Article!]
+  saved: [Article!]
+  similarArticlesById(id: ID!): [Article!]
+  similarArticlesBySlug(id: ID!): [Article!]
+  recomendedArticles: [Article!]
+  topTrendingArticles: [Article!]
+  trendingArticlesForYou: [Article!]
+}
+
+extend type Mutation {
+  publishArticle(id: ID!): Article!
+  updateArticle(id: ID!): Article!
+  createArticle(id: ID!): Article!
+  archivedArticle(id: ID!): Article!
+  deleteArticle(id: ID!): Article!
+  saveArticle(id: ID!): Article!
+  unSaveArticle(id: ID!): Article!
+  likeArticle(id: ID!): Article!
+  unLikeArticle(id: ID!): Article!
+  reactArticle(id: ID!): Article!
+}
+
+extend type Subscription {
+  articleCreated: Article
+  articleUpdated: Article
+}
+
+type Article {
+  _id: ID!
+  _key: ID
+  slug: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  published: Boolean
+  archived: Boolean
+  deleted: Boolean
+  title: String
+  body: String
+  headerImage: [String!]
+  photo: String
+  tags: [String!]
+  category: Interest
+  type: String!
+  description: String
+  author: User!
+  viewCount: Int
+  likes: [User!]!
+  comments: [Comment!]!
+  userFavourited: [User!]!
+}

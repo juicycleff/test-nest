@@ -1,0 +1,20 @@
+# import User from "../users/users.types.graphql"
+# import Article from "../articles/articles.types.graphql"
+
+extend type Query {
+  countries: [Country!]
+}
+
+extend type Mutation {
+  createCountry(name: String!): Country
+}
+
+type Country {
+  _id: ID!
+  _key: ID
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  shortName: String
+  allowed: Boolean
+}

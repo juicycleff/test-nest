@@ -1,0 +1,13 @@
+#import UserIdPayload from '../graphqls/graphqls.types.graphql';
+
+extend type Mutation {
+  signup(email: String!, password: String!, username: String!, firstname: String!,
+   lastname: String!, role: String!, gender: String! ): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  changePassword(oldPassword: String!, newPassword: String!): UserIdPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}

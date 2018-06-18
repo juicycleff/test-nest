@@ -1,0 +1,77 @@
+scalar DateTime
+
+scalar Json
+
+scalar NonPositiveInt
+
+scalar PositiveInt
+
+scalar UnsignedInt
+
+scalar UnsignedFloat
+
+scalar RegularExpression
+
+scalar Upload
+
+scalar NonNegativeInt
+
+scalar NegativeInt
+
+scalar NonPositiveFloat
+
+scalar PositiveFloat
+
+scalar NonNegativeFloat
+
+scalar NegativeFloat
+
+scalar EmailAddress
+
+scalar URL
+
+scalar PhoneNumber
+
+scalar PostalCode
+
+type TriggerPasswordResetPayload {
+  ok: Boolean!
+}
+
+type SuccessPayload {
+  success: Boolean!
+}
+
+type BooleanPayload {
+  success: Boolean!
+}
+
+type UserIdPayload {
+  id: ID!
+}
+
+
+input InviteUserInput {
+  email: String!
+}
+
+input SignupByInviteInput {
+  inviteToken: String!
+  email: String!
+  password: String!,
+  username: String!,
+  firstname: String!,
+  lastname: String!,
+  type: String!,
+  gender: String! 
+}
+
+input SignupInput {
+  email: String!
+  password: String!,
+  username: String!,
+  firstname: String!,
+  lastname: String!,
+  type: String!,
+  gender: String! 
+}
