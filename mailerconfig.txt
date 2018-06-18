@@ -1,0 +1,14 @@
+// tslint:disable-next-line:no-var-requires
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+export = {
+  transport: sendgridTransport({
+    auth: {
+      api_key: 'key',
+    },
+  }),
+  defaults: {
+    from: '"nest-mailer" <noreply@unizonn.com>',
+  },
+  templateDir: './src/common/email-templates',
+};
