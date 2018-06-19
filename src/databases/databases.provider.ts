@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import OrientDB, { ODatabase } from 'orientjs';
 import { aql, Database } from 'arangojs';
 import { DATABASE_ARANGRO, DATABASE_ORIENT } from './database.constants';
-import { IArangoDatabaseConfig } from 'common/config/interfaces/database.interface';
+import { IArangoDatabaseConfig } from '../common/config/interfaces/database.interface';
 
 export const createArangoDbProviders = (options: IArangoDatabaseConfig) => [
   {

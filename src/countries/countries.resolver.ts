@@ -9,12 +9,12 @@ import {
 } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
 
-import { findFollowers } from 'databases/dataloaders/user';
-import { getUserId } from 'common/utils';
-import { findOneDocument } from 'databases/dataloaders';
-import { myArticles, getActivity } from 'databases/dataloaders/article';
-import { getMyActivity } from 'databases/aql/article';
-import { CommentsService } from 'comments/comments.service';
+import { findFollowers } from '../databases/dataloaders/user';
+import { getUserId } from '../common/utils';
+import { findOneDocument } from '../databases/dataloaders';
+import { myArticles, getActivity } from '../databases/dataloaders/article';
+import { getMyActivity } from '../databases/aql/article';
+import { CommentsService } from '../comments/comments.service';
 
 const pubSub = new PubSub();
 

@@ -1,5 +1,5 @@
-import { User } from 'users/interfaces';
-import { Article } from 'articles/interfaces/articles.interface';
+import { User } from '../../users/interfaces';
+import { Article } from '../../articles/interfaces/articles.interface';
 
 export interface Interest {
   _id: string;

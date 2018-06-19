@@ -11,11 +11,10 @@ import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 import * as uuidv4 from 'uuid/v4';
 import { PubSub } from 'graphql-subscriptions';
-import { getUserId, getUser } from 'common/utils';
-import { UsersService } from 'users/users.service';
+import { getUserId, getUser } from '../common/utils';
 import { AuthService } from './auth.service';
-import { User } from 'users/interfaces';
-import { findUserById, findUserByEmail } from 'databases/dataloaders/user';
+import { User } from '../users/interfaces';
+import { findUserById, findUserByEmail } from '../databases/dataloaders/user';
 import {
   PasswordTooShortError,
   MissingDataError,
@@ -24,8 +23,8 @@ import {
   UserEmailUnconfirmedError,
   UserDeletedError,
   InvalidOldPasswordError,
-} from 'common/apollo-errors';
-import { createDocument, findOneDocument, updateDocument } from 'databases/dataloaders';
+} from '../common/apollo-errors';
+import { createDocument, findOneDocument, updateDocument } from '../databases/dataloaders';
 import { JwtAuthPayload } from './interfaces/jwt-payload.interface';
 
 const pubSub = new PubSub();

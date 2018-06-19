@@ -10,7 +10,7 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { MathModule } from './math/math.module';
 import { ArticlesModule } from './articles/articles.module';
 import { UsersModule } from './users/users.module';
-import { SubscriptionsService } from 'subscriptions/subscriptions.service';
+import { SubscriptionsService } from './subscriptions/subscriptions.service';
 import { InterestsModule } from './interests/interests.module';
 import { MessagesModule } from './messages/messages.module';
 import { LibrariesModule } from './libraries/libraries.module';
@@ -75,7 +75,13 @@ const resolvers = {
       url: 'http://localhost:8529',
     }),
     AuthModule,
-    MailerModule.forRoot(),
+    MailerModule.forRoot({
+      transport: 'smtps://have.com:pass@smtp.gmail.com',
+      defaults: {
+        from: '"unizonn" <no-reply@unizonn.com>',
+      },
+      templateDir: './src/common/email-templates',
+    }),
     SubscriptionsModule.forRoot(),
     MathModule,
     GraphQLModule,

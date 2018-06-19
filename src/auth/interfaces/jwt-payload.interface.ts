@@ -1,4 +1,4 @@
-import { User } from 'users/interfaces';
+import { User } from '../../users/interfaces';
 
 export interface JwtPayload {
   email: string;

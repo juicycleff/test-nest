@@ -1,7 +1,7 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { createArangoDbProviders, createOrientDbProviders } from './databases.provider';
 import { createSign } from 'crypto';
-import { IArangoDatabaseConfig } from 'common/config/interfaces/database.interface';
+import { IArangoDatabaseConfig } from '../common/config/interfaces/database.interface';
 
 @Module({
 })

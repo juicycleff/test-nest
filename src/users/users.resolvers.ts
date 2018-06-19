@@ -19,8 +19,8 @@ import {
   checkFollowingStatus,
   findFollowing,
   findFollowers,
-} from 'databases/dataloaders/user';
-import { getUserId } from 'common/utils';
+} from '../databases/dataloaders/user';
+import { getUserId } from '../common/utils';
 
 const pubSub = new PubSub();
 

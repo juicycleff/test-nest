@@ -10,10 +10,10 @@ import {
 import { PubSub } from 'graphql-subscriptions';
 
 import { ArticlesService } from './articles.service';
-import { findFollowers } from 'databases/dataloaders/user';
-import { getUserId } from 'common/utils';
-import { findOneDocument } from 'databases/dataloaders';
-import { myArticles, getActivity } from 'databases/dataloaders/article';
+import { findFollowers } from '../databases/dataloaders/user';
+import { getUserId } from '../common/utils';
+import { findOneDocument } from '../databases/dataloaders';
+import { myArticles, getActivity } from '../databases/dataloaders/article';
 import { getMyActivity } from 'databases/aql/article';
 
 const pubSub = new PubSub();

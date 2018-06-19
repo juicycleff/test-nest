@@ -1,6 +1,6 @@
-import { User } from 'users/interfaces';
-import { Message } from 'messages/interfaces/messages.interface';
-import { Community } from 'communities/interfaces/communities.interface';
+import { User } from '../../users/interfaces';
+import { Message } from '../../messages/interfaces/messages.interface';
+import { Community } from '../../communities/interfaces/communities.interface';
 
 export interface Channel {
   id: string;
