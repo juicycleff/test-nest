@@ -106,23 +106,25 @@ export class CommentsResolvers {
   @Subscription()
   async commentCreated(user: any, args: any, context: any) {
     // const id = getUserId(context);
-    const data = {
+    /*const data = {
       id: user._id,
       next: false,
     };
     const following = await findFollowers.load(data);
-    return following;
+    */
+    return null;
   }
 
   @Subscription()
   async commentUpdated(user: any, args: any, context: any) {
     // const id = getUserId(context);
-    const data = {
+    /*const data = {
       id: user._id,
       next: false,
     };
     const following = await findFollowers.load(data);
-    return following;
+    return following;*/
+    return null;
   }
 
   @ResolveProperty('replies')
@@ -160,17 +162,6 @@ export class CommentsResolvers {
 
   @ResolveProperty('reactions')
   async reactionsProps(user: any, args: any, context: any) {
-    // const id = getUserId(context);
-    const data = {
-      id: user._id,
-      next: false,
-    };
-    const following = await findFollowers.load(data);
-    return following;
-  }
-
-  @ResolveProperty('category')
-  async categoryProps(user: any, args: any, context: any) {
     // const id = getUserId(context);
     const data = {
       id: user._id,

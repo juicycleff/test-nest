@@ -2,10 +2,10 @@
 # import Article from "../articles/articles.types.graphql"
 
 extend type Query {
-  comments(articleId: ID!, skip: Number!): [Comment!]
+  comments(articleId: ID!, skip: Int!): [Comment!]
   commentsByArticle(id: ID!): [Comment!]
   comment(id: ID!): Comment
-  replies(id: ID!, skip: Number!): [Comment!]
+  replies(id: ID!, skip: Int!): [Comment!]
 }
 
 extend type Mutation {

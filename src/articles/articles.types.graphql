@@ -9,7 +9,7 @@ extend type Query {
   articles: [Article!]
   drafts: [Article!]
   published: [Article!]
-  activity(userusername: String!, skip: Number): [Article!]
+  activity(userusername: String!, skip: Int): [Article!]
   saved: [Article!]
   similarArticlesById(id: ID!): [Article!]
   similarArticlesBySlug(id: ID!): [Article!]
