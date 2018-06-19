@@ -4,11 +4,9 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { join } from 'path';
 import { grpcClientOptions } from './grpc-client.options';
 import { Transport } from '@nestjs/microservices';
-import { bodyParserGraphQL } from 'body-parser-graphql';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(bodyParserGraphQL());
 
   /*
    * @description enable static file path
