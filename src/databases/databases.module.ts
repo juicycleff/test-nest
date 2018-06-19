@@ -8,11 +8,11 @@ import { IArangoDatabaseConfig } from '../common/config/interfaces/database.inte
 export class DatabasesModule {
   static forRoot(options: IArangoDatabaseConfig): DynamicModule {
     const providers = createArangoDbProviders(options);
-    const providersOrient = createOrientDbProviders(options);
+    // const providersOrient = createOrientDbProviders(options);
     return {
       module: DatabasesModule,
-      providers: [...providers, ...providersOrient],
-      exports: [...providers, ...providersOrient],
+      providers: [...providers],
+      exports: [...providers],
     };
   }
 }

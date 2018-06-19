@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import OrientDB, { ODatabase } from 'orientjs';
+// import OrientDB, { ODatabase } from 'orientjs';
 import { aql, Database } from 'arangojs';
 import { DATABASE_ARANGRO, DATABASE_ORIENT } from './database.constants';
 import { IArangoDatabaseConfig } from '../common/config/interfaces/database.interface';
@@ -26,7 +26,7 @@ export const createOrientDbProviders = (options: IArangoDatabaseConfig) => [
   {
     provide: DATABASE_ORIENT,
     useFactory: () => {
-      const odb = new ODatabase({
+      /*const odb = new ODatabase({
         host: options.hostOdb,
         port: options.portOdb,
         username: options.username,
@@ -36,7 +36,7 @@ export const createOrientDbProviders = (options: IArangoDatabaseConfig) => [
 
       // const odb = oServer.use(options.databaseName);
 
-      return odb;
+      return odb;*/
     },
   },
 ];

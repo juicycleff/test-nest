@@ -1,4 +1,4 @@
-import { ServerConfig } from 'orientjs';
+// import { ServerConfig } from 'orientjs';
 
 export interface IDatabaseConfigAttributes {
   username: string;
@@ -26,7 +26,7 @@ export interface IArangoDatabaseConfig {
   password: string;
   hostOdb?: string;
   portOdb?: number;
-  servers?: ServerConfig[];
+  // servers?: ServerConfig[];
 }
 
 export interface IDatabaseConfig {
